@@ -1,0 +1,19 @@
+{
+    "ext_name": {
+        "message": "Quasimodo"
+    },
+    "ext_description" : {
+        "message": "Quasimodo це проста утиліта, яка нагадує Вам сидіти рівно і не горбитися."
+    },
+
+    "notification_title": {
+        "message": "Сядь прямо!"
+    },
+    "notification_description": {
+        "message": "Не горбся!"
+    },
+
+    "settings_saved": {
+        "message": "Налаштування збережено"
+    }
+}

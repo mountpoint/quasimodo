@@ -1,0 +1,19 @@
+{
+    "ext_name": {
+        "message": "Quasimodo"
+    },
+    "ext_description" : {
+        "message": "Quasimodo is a simple notifier which reminds you about sitting straight."
+    },
+
+    "notification_title": {
+        "message": "Sit straight!"
+    },
+    "notification_description": {
+        "message": "Sit straight!"
+    },
+
+    "settings_saved": {
+        "message": "Settings was saved"
+    }
+}

@@ -1,0 +1,11 @@
+.wrapper {
+  padding: 30px;
+  min-width: 300px;
+}
+.options-wrapper {
+  padding: 20px;
+  width: 300px;
+}
+.options-wrapper input {
+  margin-bottom: 20px;
+}
