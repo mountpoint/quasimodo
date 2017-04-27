@@ -3,7 +3,7 @@
         "message": "Quasimodo"
     },
     "ext_description" : {
-        "message": "Quasimodo це проста утиліта, яка нагадує Вам сидіти рівно і не горбитися."
+        "message": "Quasimodo - это простая утилита, которая напоминает Вам сидеть ровно."
     },
 
     "notification_title": {
@@ -14,6 +14,6 @@
     },
 
     "settings_saved": {
-        "message": "Налаштування збережено"
+        "message": "Настройки сохранены"
     }
 }

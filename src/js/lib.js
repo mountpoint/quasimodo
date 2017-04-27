@@ -11,7 +11,7 @@ var El = {
 /**
  * Chrome extension methods
  *
- * @type {{sendMessage: Ext.sendMessage}}
+ * @type {{sendMessage: Ext.sendMessage, setValue: Ext.setValue, updateStorageData: Ext.updateStorageData, __: Ext.__}}
  */
 var Ext = {
     /**
@@ -21,7 +21,7 @@ var Ext = {
      */
     sendMessage: function(message) {
         if (typeof message !== 'object') {
-            throw new Error('Message must be object');
+            throw new Error('Message must be an object');
         }
 
         chrome.runtime.sendMessage(message, function(response) {
@@ -38,7 +38,7 @@ var Ext = {
      */
     setValue: function(data, message) {
         if (typeof data !== 'object') {
-            throw new Error('Data must be object');
+            throw new Error('Data must be an object');
         }
 
         chrome.storage.sync.set(data, function() {
@@ -46,6 +46,24 @@ var Ext = {
             if (message) {
                 alert(message);
             }
+        });
+    },
+
+    /**
+     * TODO make updating only one property, not all
+     * @param data
+     */
+    updateStorageData: function (data) {
+        if (typeof data !== 'object') {
+            throw new Error('Data must be an object');
+        }
+
+        var self = this;
+
+        chrome.storage.sync.get('quasimodo', function() {
+            self.setValue({
+                quasimodo: data
+            });
         });
     },
 

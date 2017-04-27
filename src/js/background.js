@@ -26,7 +26,14 @@
      */
     chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
         switch (response.signal) {
+            case 'start':
+                Bg.start();
+                break;
+            case 'stop':
+                Bg.stop();
+                break;
             case 'update-interval':
+                Bg.stop();
                 Bg.start();
                 break;
             default:
@@ -65,9 +72,9 @@
             var self = this;
 
             chrome.storage.sync.get('quasimodo', function(storage) {
-                var time = storage.quasimodo.intervalTime;
+                var time = storage.quasimodo.timeLeft || self.toSeconds(storage.quasimodo.intervalTime);
 
-                self.endTimestamp = self.getCurrentTimestamp() + self.toSeconds(time);
+                self.endTimestamp = self.getCurrentTimestamp() + time;
 
                 if (self.startInterval) {
                     self.stop();
@@ -86,15 +93,37 @@
          */
         stop: function() {
             clearInterval(this.startInterval);
+
+            chrome.storage.sync.get('quasimodo', function(storage) {
+                Ext.setValue({
+                    quasimodo: {
+                        timeLeft: 0,
+                        intervalTime: storage.quasimodo.intervalTime
+                    }
+                });
+            });
         },
 
         /**
          * Refreshes time every 1 second
          */
         updateTime: function() {
-            this.timeLeft = this.endTimestamp - this.getCurrentTimestamp();
+            var self = this;
 
-            //console.log('Left - ' + this.timeLeft);
+            self.timeLeft = self.endTimestamp - self.getCurrentTimestamp();
+
+            //console.log('Left - ' + self.timeLeft);
+
+            chrome.storage.sync.get('quasimodo', function(storage) {
+                Ext.setValue({
+                    quasimodo: {
+                        timeLeft: self.timeLeft,
+                        intervalTime: storage.quasimodo.intervalTime
+                    }
+                });
+            });
+
+            Ext.sendMessage({signal: 'time-left', timeLeft: self.getTime()});
 
             if (this.timeLeft === 0) {
                 this.stop();
@@ -112,6 +141,29 @@
                 Ext.__('notification_title'),
                 Ext.__('notification_description')
             );
+        },
+
+        /**
+         * Get user friendly time
+         *
+         * @returns {{minutes: *, seconds: *}}
+         */
+        getTime: function() {
+            return {
+                minutes: this.formatTime((this.timeLeft / 60) % 60),
+                seconds: this.formatTime(this.timeLeft % 60)
+            }
+        },
+
+        /**
+         * Formats time
+         *
+         * @param dirtyTime
+         * @returns {*}
+         */
+        formatTime: function(dirtyTime) {
+            var time = Math.floor(dirtyTime);
+            return time > 9 ? time : '0' + time;
         },
 
         /**
@@ -155,4 +207,11 @@
             return Math.round(Date.now()/1000);
         }
     };
+
+    /**
+     * Start timer after Chrome startup
+     */
+    chrome.runtime.onStartup.addListener(function () {
+        Bg.start();
+    });
 })(window);
