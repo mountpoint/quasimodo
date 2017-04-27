@@ -13,6 +13,28 @@
         "message": "Sit straight!"
     },
 
+    "start_button_text": {
+        "message": "Start"
+    },
+    "stop_button_text": {
+        "message": "Stop"
+    },
+    "settings_text": {
+        "message": "Settings"
+    },
+    "notify_every_text": {
+        "message": "Notify every"
+    },
+    "minutes_text": {
+        "message": "min"
+    },
+    "save_button_text": {
+        "message": "Save"
+    },
+    "interval_text": {
+        "message": "Interval:"
+    },
+
     "settings_saved": {
         "message": "Settings was saved"
     }

@@ -112,8 +112,6 @@
 
             self.timeLeft = self.endTimestamp - self.getCurrentTimestamp();
 
-            //console.log('Left - ' + self.timeLeft);
-
             chrome.storage.sync.get('quasimodo', function(storage) {
                 Ext.setValue({
                     quasimodo: {

@@ -1,8 +1,11 @@
 (function(global) {
     var
-        intervalMinutesSlider = El.$$('change_interval_minutes'),
-        intervalMinutesBlock = El.$$('interval_minutes'),
-        saveButton = El.$$('save')
+        intervalMinutesSlider = El.$$('#change-interval-minutes'),
+        intervalMinutesBlock = El.$$('#interval-minutes'),
+        saveButton = El.$$('#save'),
+
+        intervalText = El.$$('#interval-text'),
+        minutesText = El.$$('#minutes-text')
     ;
 
     saveButton.addEventListener('click', function() {
@@ -22,4 +25,11 @@
     intervalMinutesSlider.addEventListener('input', function() {
         intervalMinutesBlock.innerHTML = this.value;
     }, false);
+
+    /**
+     * Populate language
+     */
+    saveButton.innerHTML = Ext.__('save_button_text');
+    intervalText.innerHTML = Ext.__('interval_text');
+    minutesText.innerHTML = Ext.__('minutes_text');
 })(window);

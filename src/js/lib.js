@@ -4,7 +4,7 @@
  */
 var El = {
     $$: function(el) {
-        return document.getElementById(el);
+        return document.querySelector(el);
     }
 };
 

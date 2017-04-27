@@ -1,9 +1,13 @@
 (function(global) {
     var
-        startButton = El.$$('start'),
-        stopButton = El.$$('stop'),
-        timeLeft = El.$$('time-left'),
-        intervalMinutes = El.$$('show_interval_minutes')
+        startButton = El.$$('#start'),
+        stopButton = El.$$('#stop'),
+        timeLeft = El.$$('#time-left'),
+        intervalMinutes = El.$$('#show-interval-minutes'),
+        settings = El.$$('#settings'),
+
+        notifyEveryText = El.$$('#notify-every-text'),
+        minutesText = El.$$('#minutes-text')
     ;
 
     chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
@@ -46,4 +50,13 @@
     stopButton.addEventListener('click', function() {
         App.stop();
     }, false);
+
+    /**
+     * Populate language
+     */
+    startButton.innerHTML = Ext.__('start_button_text');
+    stopButton.innerHTML = Ext.__('stop_button_text');
+    settings.innerHTML = Ext.__('settings_text');
+    notifyEveryText.innerHTML = Ext.__('notify_every_text');
+    minutesText.innerHTML = Ext.__('minutes_text');
 })(window);

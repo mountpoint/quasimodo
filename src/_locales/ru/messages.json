@@ -13,6 +13,28 @@
         "message": "Не горбся!"
     },
 
+    "start_button_text": {
+        "message": "Запустить"
+    },
+    "stop_button_text": {
+        "message": "Остановить"
+    },
+    "settings_text": {
+        "message": "Настройки"
+    },
+    "notify_every_text": {
+        "message": "Уведомлять каждые"
+    },
+    "minutes_text": {
+        "message": "минут"
+    },
+    "save_button_text": {
+        "message": "Сохранить"
+    },
+    "interval_text": {
+        "message": "Интревал:"
+    },
+
     "settings_saved": {
         "message": "Настройки сохранены"
     }
