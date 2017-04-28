@@ -4,6 +4,7 @@
         intervalMinutesBlock = El.$('#interval-minutes'),
         soundsBlock = El.$('#sounds'),
         enableSoundCheckbox = El.$('#enable-sound'),
+        playButton = El.$('.play-sound'),
         saveButton = El.$('#save'),
 
         intervalText = El.$('#interval-text'),
@@ -23,6 +24,16 @@
         Ext.sendMessage({signal: 'update-interval'});
     }, false);
 
+    /**
+     * Play sound
+     */
+    document.addEventListener('click', function(e) {
+        var parent = e.target.parentNode;
+        if (parent.classList.contains('play')) {
+            Ext.play(parent.querySelector('input[name=sound]').value);
+        }
+    });
+
     chrome.storage.local.get('quasimodo', function(storage) {
         intervalMinutesBlock.innerHTML = intervalMinutesSlider.value = storage.quasimodo.intervalTime;
         enableSoundCheckbox.checked = storage.quasimodo.soundEnabled;
@@ -35,10 +46,11 @@
             }
 
             soundsBlock.insertAdjacentHTML('beforeend',
-                '<div class="radio">'+
+                '<div class="radio play">'+
                     '<label>' +
                         '<input type="radio" name="sound" value="' + i +'" ' + checked + '> ' + Ext.__('sound_name') + i +
                     '</label>' +
+                    '<img src="img/play.svg" title="' + Ext.__('play_text') + '" class="play-sound">' +
                 '</div>'
             )
         }

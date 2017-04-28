@@ -30,9 +30,9 @@ var El = {
 };
 
 /**
- * Chrome extension methods
+ * Extension methods
  *
- * @type {{sendMessage: Ext.sendMessage, setValue: Ext.setValue, __: Ext.__}}
+ * @type {{sendMessage: Ext.sendMessage, setValue: Ext.setValue, __: Ext.__, play: Ext.play}}
  */
 var Ext = {
     /**
@@ -89,5 +89,19 @@ var Ext = {
      */
     __: function (key) {
         return chrome.i18n.getMessage(key)
+    },
+
+    /**
+     * Play the sound
+     *
+     * @param soundNumber
+     */
+    play: function (soundNumber) {
+        var soundExt = '.mp3';
+        if (/OPR/g.test(navigator.userAgent)) { // for Opera browser
+            soundExt = '.ogg';
+        }
+        var audio = new Audio('sounds/' + soundNumber + soundExt);
+        audio.play();
     }
 };

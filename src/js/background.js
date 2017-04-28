@@ -153,10 +153,11 @@
                     message: message
                 },
                 function(notificationId) {
+
+
                     chrome.storage.local.get('quasimodo', function(storage) {
                         if (storage.quasimodo.soundEnabled) {
-                            var audio = new Audio('sounds/' + storage.quasimodo.soundNumber + '.mp3');
-                            audio.play();
+                            Ext.play(storage.quasimodo.soundNumber);
                         }
                     });
                 }

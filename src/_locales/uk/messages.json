@@ -43,6 +43,9 @@
     "sound_name": {
         "message": "Звук "
     },
+    "play_text": {
+        "message": "Прослухати звук"
+    },
 
     "settings_saved": {
         "message": "Налаштування збережено"

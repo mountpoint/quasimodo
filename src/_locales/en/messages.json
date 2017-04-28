@@ -43,6 +43,9 @@
     "sound_name": {
         "message": "Sound "
     },
+    "play_text": {
+        "message": "Play"
+    },
 
     "settings_saved": {
         "message": "Settings was saved"

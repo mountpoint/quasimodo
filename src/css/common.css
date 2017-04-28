@@ -9,3 +9,10 @@
 .options-wrapper input {
   margin-bottom: 20px;
 }
+.options-wrapper .play-sound {
+  cursor: pointer;
+  width: 10px;
+  position: relative;
+  top: -1px;
+  margin-left: 10px;
+}
