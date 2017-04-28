@@ -9,19 +9,6 @@
     });
 
     /**
-     * Load default data at first time
-     */
-    chrome.storage.sync.get('quasimodo', function(storage) {
-        if (typeof storage.quasimodo === 'undefined') {
-            Ext.setValue({
-                quasimodo: {
-                    intervalTime: 5
-                }
-            });
-        }
-    });
-
-    /**
      * Receiving signals
      */
     chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
@@ -51,11 +38,6 @@
         endTimestamp: null,
 
         /**
-         * Current timestamp
-         */
-        currentTimestamp: null,
-
-        /**
          * Time left
          */
         timeLeft: null,
@@ -71,14 +53,10 @@
         start: function() {
             var self = this;
 
-            chrome.storage.sync.get('quasimodo', function(storage) {
-                var time = storage.quasimodo.timeLeft || self.toSeconds(storage.quasimodo.intervalTime);
+            chrome.storage.local.get('quasimodo', function(storage) {
+                var time = self.timeLeft || self.toSeconds(storage.quasimodo.intervalTime);
 
                 self.endTimestamp = self.getCurrentTimestamp() + time;
-
-                if (self.startInterval) {
-                    self.stop();
-                }
 
                 self.startInterval = setInterval((function(that) {
                     return function() {
@@ -92,16 +70,9 @@
          * Stop timer
          */
         stop: function() {
+            //alert(234)
+            this.timeLeft = null;
             clearInterval(this.startInterval);
-
-            chrome.storage.sync.get('quasimodo', function(storage) {
-                Ext.setValue({
-                    quasimodo: {
-                        timeLeft: 0,
-                        intervalTime: storage.quasimodo.intervalTime
-                    }
-                });
-            });
         },
 
         /**
@@ -112,21 +83,12 @@
 
             self.timeLeft = self.endTimestamp - self.getCurrentTimestamp();
 
-            chrome.storage.sync.get('quasimodo', function(storage) {
-                Ext.setValue({
-                    quasimodo: {
-                        timeLeft: self.timeLeft,
-                        intervalTime: storage.quasimodo.intervalTime
-                    }
-                });
-            });
-
             Ext.sendMessage({signal: 'time-left', timeLeft: self.getTime()});
 
-            if (this.timeLeft === 0) {
-                this.stop();
-                this.showNotification();
-                this.start();
+            if (self.timeLeft === 0) {
+                self.stop();
+                self.showNotification();
+                self.start();
             }
         },
 
@@ -191,7 +153,12 @@
                     message: message
                 },
                 function(notificationId) {
-
+                    chrome.storage.local.get('quasimodo', function(storage) {
+                        if (storage.quasimodo.soundEnabled) {
+                            var audio = new Audio('sounds/' + storage.quasimodo.soundNumber + '.mp3');
+                            audio.play();
+                        }
+                    });
                 }
             );
         },
@@ -212,4 +179,16 @@
     chrome.runtime.onStartup.addListener(function () {
         Bg.start();
     });
+
+    /**
+     * Actions after extension installed
+     */
+    chrome.runtime.onInstalled.addListener(function () {
+        Ext.setValue({
+            soundEnabled: true,
+            soundNumber: 1,
+            intervalTime: 5,
+            isStarted: false
+        });
+    })
 })(window);

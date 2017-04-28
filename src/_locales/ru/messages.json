@@ -34,6 +34,15 @@
     "interval_text": {
         "message": "Интревал:"
     },
+    "sounds_text": {
+        "message": "Звуки"
+    },
+    "enable_sound_text": {
+        "message": "Включить звук"
+    },
+    "sound_name": {
+        "message": "Звук "
+    },
 
     "settings_saved": {
         "message": "Настройки сохранены"

@@ -34,6 +34,15 @@
     "interval_text": {
         "message": "Interval:"
     },
+    "sounds_text": {
+        "message": "Sounds"
+    },
+    "enable_sound_text": {
+        "message": "Enable sound"
+    },
+    "sound_name": {
+        "message": "Sound "
+    },
 
     "settings_saved": {
         "message": "Settings was saved"

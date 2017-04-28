@@ -1,17 +1,38 @@
 /**
  * HTML Element manipulations
- * @type {{}}
+ *
+ * @type {{$: El.$, $$: El.$$, show: El.show, hide: El.hide}}
  */
 var El = {
-    $$: function(el) {
+    $: function(el) {
         return document.querySelector(el);
+    },
+
+    $$: function(el) {
+        return document.querySelectorAll(el);
+    },
+
+    show: function (el) {
+        if (typeof el == 'string') {
+            this.$(el).style.display = 'block';
+        } else {
+            el.style.display = 'block';
+        }
+    },
+
+    hide: function (el) {
+        if (typeof el == 'string') {
+            this.$(el).style.display = 'none';
+        } else {
+            el.style.display = 'none';
+        }
     }
 };
 
 /**
  * Chrome extension methods
  *
- * @type {{sendMessage: Ext.sendMessage, setValue: Ext.setValue, updateStorageData: Ext.updateStorageData, __: Ext.__}}
+ * @type {{sendMessage: Ext.sendMessage, setValue: Ext.setValue, __: Ext.__}}
  */
 var Ext = {
     /**
@@ -29,7 +50,6 @@ var Ext = {
         });
     },
 
-
     /**
      * Save data in storage
      *
@@ -41,28 +61,22 @@ var Ext = {
             throw new Error('Data must be an object');
         }
 
-        chrome.storage.sync.set(data, function() {
-            // Notify that we saved.
-            if (message) {
-                alert(message);
+        chrome.storage.local.get('quasimodo', function(storage) {
+            if (typeof storage.quasimodo == 'undefined') {
+                storage.quasimodo = {};
             }
-        });
-    },
 
-    /**
-     * TODO make updating only one property, not all
-     * @param data
-     */
-    updateStorageData: function (data) {
-        if (typeof data !== 'object') {
-            throw new Error('Data must be an object');
-        }
+            for (var prop in data) {
+                storage.quasimodo[prop] = data[prop];
+            }
 
-        var self = this;
-
-        chrome.storage.sync.get('quasimodo', function() {
-            self.setValue({
-                quasimodo: data
+            chrome.storage.local.set({
+                quasimodo: storage.quasimodo
+            }, function() {
+                // Notify that we saved.
+                if (message) {
+                    alert(message);
+                }
             });
         });
     },
@@ -71,7 +85,7 @@ var Ext = {
      * Get locale message
      *
      * @param key
-     * @returns {*}
+     * @returns {string}
      */
     __: function (key) {
         return chrome.i18n.getMessage(key)

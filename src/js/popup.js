@@ -1,13 +1,13 @@
 (function(global) {
     var
-        startButton = El.$$('#start'),
-        stopButton = El.$$('#stop'),
-        timeLeft = El.$$('#time-left'),
-        intervalMinutes = El.$$('#show-interval-minutes'),
-        settings = El.$$('#settings'),
+        startButton = El.$('#start'),
+        stopButton = El.$('#stop'),
+        timeLeft = El.$('#time-left'),
+        intervalMinutes = El.$('#show-interval-minutes'),
+        settings = El.$('#settings'),
 
-        notifyEveryText = El.$$('#notify-every-text'),
-        minutesText = El.$$('#minutes-text')
+        notifyEveryText = El.$('#notify-every-text'),
+        minutesText = El.$('#minutes-text')
     ;
 
     chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
@@ -20,8 +20,14 @@
         }
     });
 
-    chrome.storage.sync.get('quasimodo', function(storage) {
+    chrome.storage.local.get('quasimodo', function(storage) {
         intervalMinutes.innerHTML = storage.quasimodo.intervalTime;
+
+        if (storage.quasimodo.isStarted) {
+            El.hide(startButton);
+        } else {
+            El.hide(stopButton);
+        }
     });
 
     /**
@@ -32,14 +38,26 @@
          * Start timer
          */
         start: function() {
+            El.show(stopButton);
+            El.hide(startButton);
             Ext.sendMessage({signal: 'start'});
+
+            Ext.setValue({
+                isStarted: true
+            });
         },
 
         /**
          * Stop timer
          */
         stop: function() {
+            El.show(startButton);
+            El.hide(stopButton);
             Ext.sendMessage({signal: 'stop'});
+
+            Ext.setValue({
+                isStarted: false
+            });
         }
     };
 

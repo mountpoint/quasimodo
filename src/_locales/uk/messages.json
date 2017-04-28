@@ -34,6 +34,15 @@
     "interval_text": {
         "message": "Інтервал:"
     },
+    "sounds_text": {
+        "message": "Звуки"
+    },
+    "enable_sound_text": {
+        "message": "Увімкнути звук"
+    },
+    "sound_name": {
+        "message": "Звук "
+    },
 
     "settings_saved": {
         "message": "Налаштування збережено"
