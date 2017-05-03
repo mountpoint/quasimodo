@@ -1,5 +1,7 @@
 v0.3.4
 
+Available in [Chrome Web Store](https://chrome.google.com/webstore/detail/quasimodo/jpohldhhhjpclbldblabdhkgnjkicflm?hl=en-US)
+
 ### Правила оформления кода и прочее
 
 * Использовать только одинарные кавычки
