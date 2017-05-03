@@ -58,6 +58,10 @@
 
                 self.endTimestamp = self.getCurrentTimestamp() + time;
 
+                Ext.setValue({
+                    isStarted: true
+                });
+
                 self.startInterval = setInterval((function(that) {
                     return function() {
                         that.updateTime();
@@ -70,9 +74,12 @@
          * Stop timer
          */
         stop: function() {
-            //alert(234)
             this.timeLeft = null;
             clearInterval(this.startInterval);
+
+            Ext.setValue({
+                isStarted: false
+            });
         },
 
         /**
@@ -153,8 +160,6 @@
                     message: message
                 },
                 function(notificationId) {
-
-
                     chrome.storage.local.get('quasimodo', function(storage) {
                         if (storage.quasimodo.soundEnabled) {
                             Ext.play(storage.quasimodo.soundNumber);

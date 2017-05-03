@@ -41,10 +41,6 @@
             El.show(stopButton);
             El.hide(startButton);
             Ext.sendMessage({signal: 'start'});
-
-            Ext.setValue({
-                isStarted: true
-            });
         },
 
         /**
@@ -54,10 +50,6 @@
             El.show(startButton);
             El.hide(stopButton);
             Ext.sendMessage({signal: 'stop'});
-
-            Ext.setValue({
-                isStarted: false
-            });
         }
     };
 

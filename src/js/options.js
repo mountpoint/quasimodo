@@ -4,7 +4,6 @@
         intervalMinutesBlock = El.$('#interval-minutes'),
         soundsBlock = El.$('#sounds'),
         enableSoundCheckbox = El.$('#enable-sound'),
-        playButton = El.$('.play-sound'),
         saveButton = El.$('#save'),
 
         intervalText = El.$('#interval-text'),
@@ -28,9 +27,9 @@
      * Play sound
      */
     document.addEventListener('click', function(e) {
-        var parent = e.target.parentNode;
-        if (parent.classList.contains('play')) {
-            Ext.play(parent.querySelector('input[name=sound]').value);
+        var el = e.target;
+        if (el.classList.contains('play-sound')) {
+            Ext.play(el.parentNode.querySelector('input[name=sound]').value);
         }
     });
 
