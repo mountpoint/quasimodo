@@ -4,6 +4,7 @@
         intervalMinutesBlock = El.$('#interval-minutes'),
         soundsBlock = El.$('#sounds'),
         enableSoundCheckbox = El.$('#enable-sound'),
+        alertBlock = El.$('#alert'),
         saveButton = El.$('#save'),
 
         intervalText = El.$('#interval-text'),
@@ -18,7 +19,13 @@
             soundEnabled: enableSoundCheckbox.checked,
             intervalTime: intervalMinutesSlider.value,
             isStarted: true
-        }, Ext.__('settings_saved'));
+        });
+
+        alertBlock.innerHTML =
+            '<div class="alert alert-success">' + Ext.__('settings_saved') +
+                '<button type="button" class="close close-alert"><span aria-hidden="true">&times;</span></button>' +
+            '</div>'
+        ;
 
         Ext.sendMessage({signal: 'update-interval'});
     }, false);
@@ -30,6 +37,10 @@
         var el = e.target;
         if (el.classList.contains('play-sound')) {
             Ext.play(el.parentNode.querySelector('input[name=sound]').value);
+        }
+
+        if (el.parentNode.classList.contains('close-alert')) {
+            El.hide(el.parentNode.parentNode);
         }
     });
 
