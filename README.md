@@ -1,4 +1,4 @@
-v0.3.4
+v0.4.0
 
 Available in [Chrome Web Store](https://chrome.google.com/webstore/detail/quasimodo/jpohldhhhjpclbldblabdhkgnjkicflm?hl=en-US)
 

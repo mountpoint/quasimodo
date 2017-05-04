@@ -46,6 +46,15 @@
     "play_text": {
         "message": "Play"
     },
+    "silence_mode_text": {
+        "message": "Silence Mode"
+    },
+    "from_text": {
+        "message": "From"
+    },
+    "to_text": {
+        "message": "To"
+    },
 
     "settings_saved": {
         "message": "Settings was saved"

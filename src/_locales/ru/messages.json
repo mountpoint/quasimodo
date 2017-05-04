@@ -46,6 +46,15 @@
     "play_text": {
         "message": "Прослушать звук"
     },
+    "silence_mode_text": {
+        "message": "Режим тишины"
+    },
+    "from_text": {
+        "message": "От"
+    },
+    "to_text": {
+        "message": "До"
+    },
 
     "settings_saved": {
         "message": "Настройки сохранены"

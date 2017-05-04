@@ -12,7 +12,7 @@ var El = {
         return document.querySelectorAll(el);
     },
 
-    show: function (el) {
+    show: function(el) {
         if (typeof el == 'string') {
             this.$(el).style.display = 'block';
         } else {
@@ -20,7 +20,7 @@ var El = {
         }
     },
 
-    hide: function (el) {
+    hide: function(el) {
         if (typeof el == 'string') {
             this.$(el).style.display = 'none';
         } else {
@@ -87,7 +87,7 @@ var Ext = {
      * @param key
      * @returns {string}
      */
-    __: function (key) {
+    __: function(key) {
         return chrome.i18n.getMessage(key)
     },
 
@@ -96,7 +96,7 @@ var Ext = {
      *
      * @param soundNumber
      */
-    play: function (soundNumber) {
+    play: function(soundNumber) {
         var soundExt = '.mp3';
         if (/OPR/g.test(navigator.userAgent)) { // for Opera browser
             soundExt = '.ogg';

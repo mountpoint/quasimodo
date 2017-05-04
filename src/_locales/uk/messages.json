@@ -46,6 +46,15 @@
     "play_text": {
         "message": "Прослухати звук"
     },
+    "silence_mode_text": {
+        "message": "Режим тиші"
+    },
+    "from_text": {
+        "message": "Від"
+    },
+    "to_text": {
+        "message": "До"
+    },
 
     "settings_saved": {
         "message": "Налаштування збережено"
