@@ -26,6 +26,20 @@ var El = {
         } else {
             el.style.display = 'none';
         }
+    },
+
+    text: function(el, text) {
+        // array of objects
+        if (el instanceof NodeList) {
+            for (var i = 0, len = el.length; i < len; ++i) {
+                el[i].innerHTML = text;
+            }
+        }
+
+        // object
+        if (typeof el === 'object' && (el instanceof Node)) {
+            el.innerHTML = text;
+        }
     }
 };
 

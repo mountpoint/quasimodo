@@ -43,15 +43,15 @@
         Ext.sendMessage({signal: 'update-interval'});
     }, false);
 
-    /**
-     * Play sound
-     */
     document.addEventListener('click', function(e) {
         var el = e.target;
+
+        // Play sound
         if (el.classList.contains('play-sound')) {
             Ext.play(el.parentNode.querySelector('input[name=sound]').value);
         }
 
+        // Close alert
         if (el.parentNode.classList.contains('close-alert')) {
             El.hide(el.parentNode.parentNode);
         }
@@ -132,14 +132,14 @@
     }, false);
 
     /**
-     * Populate language
+     * Populate translations
      */
-    saveButton.innerHTML = Ext.__('save_button_text');
-    intervalText.innerHTML = Ext.__('interval_text');
-    minutesText.innerHTML = Ext.__('minutes_text');
-    soundsText.innerHTML = Ext.__('sounds_text');
-    enableSoundText.innerHTML = Ext.__('enable_sound_text');
-    silenceModeText.innerHTML = Ext.__('silence_mode_text');
-    fromText.innerHTML = Ext.__('from_text');
-    toText.innerHTML = Ext.__('to_text');
+    El.text(saveButton, Ext.__('save_button_text'));
+    El.text(intervalText, Ext.__('interval_text'));
+    El.text(minutesText, Ext.__('minutes_text'));
+    El.text(soundsText, Ext.__('sounds_text'));
+    El.text(enableSoundText, Ext.__('enable_sound_text'));
+    El.text(silenceModeText, Ext.__('silence_mode_text'));
+    El.text(fromText, Ext.__('from_text'));
+    El.text(toText, Ext.__('to_text'));
 })(window);

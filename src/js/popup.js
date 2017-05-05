@@ -62,11 +62,11 @@
     }, false);
 
     /**
-     * Populate language
+     * Populate translations
      */
-    startButton.innerHTML = Ext.__('start_button_text');
-    stopButton.innerHTML = Ext.__('stop_button_text');
-    settings.innerHTML = Ext.__('settings_text');
-    notifyEveryText.innerHTML = Ext.__('notify_every_text');
-    minutesText.innerHTML = Ext.__('minutes_text');
+    El.text(startButton, Ext.__('start_button_text'));
+    El.text(stopButton, Ext.__('stop_button_text'));
+    El.text(settings, Ext.__('settings_text'));
+    El.text(notifyEveryText, Ext.__('notify_every_text'));
+    El.text(minutesText, Ext.__('minutes_text'));
 })(window);
