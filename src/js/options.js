@@ -34,11 +34,11 @@
             }
         });
 
-        alertBlock.innerHTML =
+        El.html(alertBlock,
             '<div class="alert alert-success">' + Ext.__('settings_saved') +
                 '<button type="button" class="close close-alert"><span aria-hidden="true">&times;</span></button>' +
             '</div>'
-        ;
+        );
 
         Ext.sendMessage({signal: 'update-interval'});
     }, false);
@@ -58,7 +58,9 @@
     });
 
     chrome.storage.local.get('quasimodo', function(storage) {
-        intervalMinutesBlock.innerHTML = intervalMinutesSlider.value = storage.quasimodo.intervalTime;
+        var minutes = intervalMinutesSlider.value = storage.quasimodo.intervalTime;
+        El.text(intervalMinutesBlock, minutes);
+
         enableSoundCheckbox.checked = storage.quasimodo.soundEnabled;
 
         for (var i = 1; i <= 3; ++i) {
@@ -128,7 +130,7 @@
     });
 
     intervalMinutesSlider.addEventListener('input', function() {
-        intervalMinutesBlock.innerHTML = this.value;
+        El.text(intervalMinutesBlock, this.value);
     }, false);
 
     /**

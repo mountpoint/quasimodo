@@ -28,17 +28,53 @@ var El = {
         }
     },
 
+    /**
+     * Set element's text
+     *
+     * @param el
+     * @param text
+     */
     text: function(el, text) {
         // array of objects
         if (el instanceof NodeList) {
             for (var i = 0, len = el.length; i < len; ++i) {
-                el[i].innerHTML = text;
+                el[i].textContent = text;
             }
         }
 
         // object
         if (typeof el === 'object' && (el instanceof Node)) {
-            el.innerHTML = text;
+            el.textContent = text;
+        }
+
+        // selector
+        if (typeof el === 'string') {
+            this.text(this.$$(el), text);
+        }
+    },
+
+    /**
+     * Set element's html
+     *
+     * @param el
+     * @param html
+     */
+    html: function(el, html) {
+        // array of objects
+        if (el instanceof NodeList) {
+            for (var i = 0, len = el.length; i < len; ++i) {
+                el[i].innerHTML = html;
+            }
+        }
+
+        // object
+        if (typeof el === 'object' && (el instanceof Node)) {
+            el.innerHTML = html;
+        }
+
+        // selector
+        if (typeof el === 'string') {
+            this.html(this.$$(el), html);
         }
     }
 };

@@ -1,6 +1,13 @@
-v0.4.2
+v0.4.3
 
 Available in [Chrome Web Store](https://chrome.google.com/webstore/detail/quasimodo/jpohldhhhjpclbldblabdhkgnjkicflm?hl=en-US)
+
+### Make a build
+1. ```npm install```
+2. ```gulp```
+3. Unpacked extension will be available in **public** folder
+4. Go to Extension page in Chrome/Opera, press *Developer mode*, then *Load unpacked extension...* and load **public** floder
+5. Enjoy =)
 
 ### Правила оформления кода и прочее
 

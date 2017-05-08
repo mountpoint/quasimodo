@@ -13,7 +13,7 @@
     chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
         switch (response.signal) {
             case 'time-left':
-                timeLeft.innerHTML = response.timeLeft.minutes + ':' + response.timeLeft.seconds;
+                El.text(timeLeft, response.timeLeft.minutes + ':' + response.timeLeft.seconds);
                 break;
             default:
                 alert('no handler')
@@ -21,7 +21,7 @@
     });
 
     chrome.storage.local.get('quasimodo', function(storage) {
-        intervalMinutes.innerHTML = storage.quasimodo.intervalTime;
+        El.text(intervalMinutes, storage.quasimodo.intervalTime);
 
         if (storage.quasimodo.isStarted) {
             El.hide(startButton);
