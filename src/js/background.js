@@ -253,6 +253,10 @@
                 day = '02';
             }
 
+            if (hours < this.silence.toHours) {
+                day = '02';
+            }
+
             if (hours <= 9) {
                 hours = '0' + hours;
             }
