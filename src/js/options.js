@@ -63,7 +63,7 @@
 
         enableSoundCheckbox.checked = storage.quasimodo.soundEnabled;
 
-        for (var i = 1; i <= 3; ++i) {
+        for (var i = 1; i <= 7; ++i) {
             var checked = '';
 
             if (storage.quasimodo.soundNumber == i) {
