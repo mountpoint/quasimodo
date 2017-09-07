@@ -1,4 +1,4 @@
-v0.4.6
+v0.4.7
 
 Available in [Chrome Web Store](https://chrome.google.com/webstore/detail/quasimodo/jpohldhhhjpclbldblabdhkgnjkicflm?hl=en-US) and [Opera add-ons](https://addons.opera.com/en/extensions/details/quasimodo/)
 
