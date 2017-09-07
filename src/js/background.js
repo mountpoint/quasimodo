@@ -210,22 +210,18 @@
          * @param message
          */
         createBasicNotification: function(id, title, message) {
-            chrome.notifications.create(
-                id,
-                {
-                    type: 'basic',
-                    iconUrl: 'img/icon128.png',
-                    title: title,
-                    message: message
-                },
-                function(notificationId) {
-                    chrome.storage.local.get('quasimodo', function(storage) {
-                        if (storage.quasimodo.soundEnabled) {
-                            Ext.play(storage.quasimodo.soundNumber);
-                        }
-                    });
-                }
-            );
+            chrome.notifications.create('', {
+                type: 'basic',
+                iconUrl: 'img/icon128.png',
+                title: title,
+                message: message
+            }, function(notificationId) {
+                chrome.storage.local.get('quasimodo', function(storage) {
+                    if (storage.quasimodo.soundEnabled) {
+                        Ext.play(storage.quasimodo.soundNumber);
+                    }
+                });
+            });
         },
 
         /**
