@@ -154,7 +154,7 @@
                         that.start();
                         clearInterval(that.timeWatcherInterval);
                     }
-                }
+                };
             })(self), 1000);
         },
 
