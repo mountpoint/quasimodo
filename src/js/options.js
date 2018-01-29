@@ -66,7 +66,7 @@
         for (var i = 1; i <= 7; ++i) {
             var checked = '';
 
-            if (storage.quasimodo.soundNumber == i) {
+            if (+storage.quasimodo.soundNumber === i) {
                 checked = 'checked'
             }
 
@@ -86,7 +86,7 @@
             }
 
             var fromHoursSelected = '';
-            if (storage.quasimodo.silence.fromHours == +h) {
+            if (+storage.quasimodo.silence.fromHours === +h) {
                 fromHoursSelected = 'selected';
             }
 
@@ -95,7 +95,7 @@
             );
 
             var toHoursSelected = '';
-            if (storage.quasimodo.silence.toHours == +h) {
+            if (+storage.quasimodo.silence.toHours === +h) {
                 toHoursSelected = 'selected';
             }
 
@@ -110,7 +110,7 @@
             }
 
             var fromMinutesSelected = '';
-            if (storage.quasimodo.silence.fromMinutes == +m) {
+            if (+storage.quasimodo.silence.fromMinutes === +m) {
                 fromMinutesSelected = 'selected';
             }
 
@@ -119,7 +119,7 @@
             );
 
             var toMinutesSelected = '';
-            if (storage.quasimodo.silence.toMinutes == +m) {
+            if (+storage.quasimodo.silence.toMinutes === +m) {
                 toMinutesSelected = 'selected';
             }
 

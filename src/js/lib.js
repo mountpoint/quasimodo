@@ -13,7 +13,7 @@ var El = {
     },
 
     show: function(el) {
-        if (typeof el == 'string') {
+        if (typeof el === 'string') {
             this.$(el).style.display = 'block';
         } else {
             el.style.display = 'block';
@@ -21,7 +21,7 @@ var El = {
     },
 
     hide: function(el) {
-        if (typeof el == 'string') {
+        if (typeof el === 'string') {
             this.$(el).style.display = 'none';
         } else {
             el.style.display = 'none';
@@ -112,7 +112,7 @@ var Ext = {
         }
 
         chrome.storage.local.get('quasimodo', function(storage) {
-            if (typeof storage.quasimodo == 'undefined') {
+            if (typeof storage.quasimodo === 'undefined') {
                 storage.quasimodo = {};
             }
 
@@ -138,7 +138,7 @@ var Ext = {
      * @returns {string}
      */
     __: function(key) {
-        return chrome.i18n.getMessage(key)
+        return chrome.i18n.getMessage(key);
     },
 
     /**
