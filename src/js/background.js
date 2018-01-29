@@ -178,7 +178,7 @@
             return {
                 minutes: this.formatTime((this.timeLeft / 60) % 60),
                 seconds: this.formatTime(this.timeLeft % 60)
-            }
+            };
         },
 
         /**
