@@ -67,7 +67,7 @@
             var checked = '';
 
             if (+storage.quasimodo.soundNumber === i) {
-                checked = 'checked'
+                checked = 'checked';
             }
 
             soundsBlock.insertAdjacentHTML('beforeend',

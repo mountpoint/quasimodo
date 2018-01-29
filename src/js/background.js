@@ -85,7 +85,7 @@
                 self.startInterval = setInterval((function(that) {
                     return function() {
                         that.updateTime();
-                    }
+                    };
                 })(self), 1000);
             });
         },

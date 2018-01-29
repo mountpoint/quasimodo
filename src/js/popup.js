@@ -16,7 +16,7 @@
                 El.text(timeLeft, response.timeLeft.minutes + ':' + response.timeLeft.seconds);
                 break;
             default:
-                alert('no handler')
+                alert('no handler');
         }
     });
 
