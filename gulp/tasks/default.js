@@ -1,11 +1,5 @@
 'use strict';
 
-const
-    gulp = require('gulp'),
-    runSequence = require('run-sequence')
-;
+const gulp = require('gulp');
 
-gulp.task('default', function () {
-    return runSequence('clean', 'copy');
-});
-
+gulp.task('default', gulp.series('clean', 'copy'));
