@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Quasimodo Options</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/common.css">
+  <meta charset="UTF-8">
+  <title>Quasimodo Options</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-    <div class="options-wrapper">
-        <div id="alert"></div>
+  <div class="options-wrapper">
+    <div id="alert"></div>
 
-        <p><span id="interval-text"></span> <span id="interval-minutes"></span> <span id="minutes-text"></span></p>
-        <input type="range" id="change-interval-minutes" value="5" min="1" max="30">
+    <p><span id="interval-text"></span> <span id="interval-minutes"></span> <span id="minutes-text"></span></p>
+    <input type="range" id="change-interval-minutes" value="5" min="1" max="30">
 
-        <fieldset style="margin-bottom: 10px">
-            <legend style="margin-bottom: 0" id="sounds-text"></legend>
+    <fieldset style="margin-bottom: 10px">
+      <legend style="margin-bottom: 0" id="sounds-text"></legend>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" id="enable-sound"> <span id="enable-sound-text"></span>
-                </label>
-            </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="enable-sound"> <span id="enable-sound-text"></span>
+        </label>
+      </div>
 
-            <div id="sounds"></div>
-        </fieldset>
+      <div id="sounds"></div>
+    </fieldset>
 
-        <fieldset class="form-inline" style="margin-bottom: 30px">
-            <legend style="margin-bottom: 0" id="silence-mode-text"></legend>
+    <fieldset class="form-inline" style="margin-bottom: 30px">
+      <legend style="margin-bottom: 0" id="silence-mode-text"></legend>
 
-            <div style="padding: 10px 0">
-                <span id="from-text"></span>
-                <select class="form-control" id="from-hours"></select> :
-                <select class="form-control" id="from-minutes"></select>
-            </div>
+      <div style="padding: 10px 0">
+        <span id="from-text"></span>
+        <select class="form-control" id="from-hours"></select> :
+        <select class="form-control" id="from-minutes"></select>
+      </div>
 
-            <div>
-                <span id="to-text"></span>
-                <select class="form-control" id="to-hours"></select> :
-                <select class="form-control" id="to-minutes"></select>
-            </div>
-        </fieldset>
+      <div>
+        <span id="to-text"></span>
+        <select class="form-control" id="to-hours"></select> :
+        <select class="form-control" id="to-minutes"></select>
+      </div>
+    </fieldset>
 
-        <button class="btn btn-primary" id="save"></button>
-    </div>
+    <button class="btn btn-primary" id="save"></button>
+  </div>
 
-    <script src="js/lib.js"></script>
-    <script src="js/options.js"></script>
+  <script src="js/lib.js"></script>
+  <script src="js/options.js"></script>
 </body>
 </html>

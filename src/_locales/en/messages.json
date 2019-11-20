@@ -1,62 +1,62 @@
 {
-    "ext_name": {
-        "message": "Quasimodo"
-    },
-    "ext_description" : {
-        "message": "Quasimodo is a simple notifier which reminds you about sitting straight."
-    },
+  "ext_name": {
+    "message": "Quasimodo"
+  },
+  "ext_description" : {
+    "message": "Quasimodo is a simple notifier which reminds you about sitting straight."
+  },
 
-    "notification_title": {
-        "message": "Sit straight!"
-    },
-    "notification_description": {
-        "message": "Be healthy!"
-    },
+  "notification_title": {
+    "message": "Sit straight!"
+  },
+  "notification_description": {
+    "message": "Be healthy!"
+  },
 
-    "start_button_text": {
-        "message": "Start"
-    },
-    "stop_button_text": {
-        "message": "Stop"
-    },
-    "settings_text": {
-        "message": "Settings"
-    },
-    "notify_every_text": {
-        "message": "Notify every"
-    },
-    "minutes_text": {
-        "message": "min"
-    },
-    "save_button_text": {
-        "message": "Save"
-    },
-    "interval_text": {
-        "message": "Interval:"
-    },
-    "sounds_text": {
-        "message": "Sounds"
-    },
-    "enable_sound_text": {
-        "message": "Enable sound"
-    },
-    "sound_name": {
-        "message": "Sound "
-    },
-    "play_text": {
-        "message": "Play"
-    },
-    "silence_mode_text": {
-        "message": "Silence Mode"
-    },
-    "from_text": {
-        "message": "From"
-    },
-    "to_text": {
-        "message": "To"
-    },
+  "start_button_text": {
+    "message": "Start"
+  },
+  "stop_button_text": {
+    "message": "Stop"
+  },
+  "settings_text": {
+    "message": "Settings"
+  },
+  "notify_every_text": {
+    "message": "Notify every"
+  },
+  "minutes_text": {
+    "message": "min"
+  },
+  "save_button_text": {
+    "message": "Save"
+  },
+  "interval_text": {
+    "message": "Interval:"
+  },
+  "sounds_text": {
+    "message": "Sounds"
+  },
+  "enable_sound_text": {
+    "message": "Enable sound"
+  },
+  "sound_name": {
+    "message": "Sound "
+  },
+  "play_text": {
+    "message": "Play"
+  },
+  "silence_mode_text": {
+    "message": "Silence Mode"
+  },
+  "from_text": {
+    "message": "From"
+  },
+  "to_text": {
+    "message": "To"
+  },
 
-    "settings_saved": {
-        "message": "Settings have been saved"
-    }
+  "settings_saved": {
+    "message": "Settings have been saved"
+  }
 }

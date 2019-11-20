@@ -1,62 +1,61 @@
 {
-    "ext_name": {
-        "message": "Quasimodo"
-    },
-    "ext_description" : {
-        "message": "Quasimodo - це проста утиліта, яка нагадує Вам сидіти рівно."
-    },
+  "ext_name": {
+    "message": "Quasimodo"
+  },
+  "ext_description" : {
+    "message": "Quasimodo - це проста утиліта, яка нагадує Вам сидіти рівно."
+  },
 
-    "notification_title": {
-        "message": "Сядь прямо!"
-    },
-    "notification_description": {
-        "message": "Не горбся!"
-    },
+  "notification_title": {
+    "message": "Сядь прямо!"
+  },
+  "notification_description": {
+    "message": "Не горбся!"
+  },
+  "start_button_text": {
+    "message": "Запустити"
+  },
+  "stop_button_text": {
+    "message": "Зупинити"
+  },
+  "settings_text": {
+    "message": "Налаштування"
+  },
+  "notify_every_text": {
+    "message": "Оповіщувати кожні"
+  },
+  "minutes_text": {
+    "message": "хвилин"
+  },
+  "save_button_text": {
+    "message": "Зберегти"
+  },
+  "interval_text": {
+    "message": "Інтервал:"
+  },
+  "sounds_text": {
+    "message": "Звуки"
+  },
+  "enable_sound_text": {
+    "message": "Увімкнути звук"
+  },
+  "sound_name": {
+    "message": "Звук "
+  },
+  "play_text": {
+    "message": "Прослухати звук"
+  },
+  "silence_mode_text": {
+    "message": "Режим тиші"
+  },
+  "from_text": {
+    "message": "Від"
+  },
+  "to_text": {
+    "message": "До"
+  },
 
-    "start_button_text": {
-        "message": "Запустити"
-    },
-    "stop_button_text": {
-        "message": "Зупинити"
-    },
-    "settings_text": {
-        "message": "Налаштування"
-    },
-    "notify_every_text": {
-        "message": "Оповіщувати кожні"
-    },
-    "minutes_text": {
-        "message": "хвилин"
-    },
-    "save_button_text": {
-        "message": "Зберегти"
-    },
-    "interval_text": {
-        "message": "Інтервал:"
-    },
-    "sounds_text": {
-        "message": "Звуки"
-    },
-    "enable_sound_text": {
-        "message": "Увімкнути звук"
-    },
-    "sound_name": {
-        "message": "Звук "
-    },
-    "play_text": {
-        "message": "Прослухати звук"
-    },
-    "silence_mode_text": {
-        "message": "Режим тиші"
-    },
-    "from_text": {
-        "message": "Від"
-    },
-    "to_text": {
-        "message": "До"
-    },
-
-    "settings_saved": {
-        "message": "Налаштування збережено"
-    }
+  "settings_saved": {
+    "message": "Налаштування збережено"
+  }
 }

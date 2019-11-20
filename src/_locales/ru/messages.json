@@ -1,62 +1,62 @@
 {
-    "ext_name": {
-        "message": "Quasimodo"
-    },
-    "ext_description" : {
-        "message": "Quasimodo - это простая утилита, которая напоминает Вам сидеть ровно."
-    },
+  "ext_name": {
+    "message": "Quasimodo"
+  },
+  "ext_description" : {
+    "message": "Quasimodo - это простая утилита, которая напоминает Вам сидеть ровно."
+  },
 
-    "notification_title": {
-        "message": "Сядь прямо!"
-    },
-    "notification_description": {
-        "message": "Не горбся!"
-    },
+  "notification_title": {
+    "message": "Сядь прямо!"
+  },
+  "notification_description": {
+    "message": "Не горбся!"
+  },
 
-    "start_button_text": {
-        "message": "Запустить"
-    },
-    "stop_button_text": {
-        "message": "Остановить"
-    },
-    "settings_text": {
-        "message": "Настройки"
-    },
-    "notify_every_text": {
-        "message": "Уведомлять каждые"
-    },
-    "minutes_text": {
-        "message": "минут"
-    },
-    "save_button_text": {
-        "message": "Сохранить"
-    },
-    "interval_text": {
-        "message": "Интревал:"
-    },
-    "sounds_text": {
-        "message": "Звуки"
-    },
-    "enable_sound_text": {
-        "message": "Включить звук"
-    },
-    "sound_name": {
-        "message": "Звук "
-    },
-    "play_text": {
-        "message": "Прослушать звук"
-    },
-    "silence_mode_text": {
-        "message": "Режим тишины"
-    },
-    "from_text": {
-        "message": "От"
-    },
-    "to_text": {
-        "message": "До"
-    },
+  "start_button_text": {
+    "message": "Запустить"
+  },
+  "stop_button_text": {
+    "message": "Остановить"
+  },
+  "settings_text": {
+    "message": "Настройки"
+  },
+  "notify_every_text": {
+    "message": "Уведомлять каждые"
+  },
+  "minutes_text": {
+    "message": "минут"
+  },
+  "save_button_text": {
+    "message": "Сохранить"
+  },
+  "interval_text": {
+    "message": "Интревал:"
+  },
+  "sounds_text": {
+    "message": "Звуки"
+  },
+  "enable_sound_text": {
+    "message": "Включить звук"
+  },
+  "sound_name": {
+    "message": "Звук "
+  },
+  "play_text": {
+    "message": "Прослушать звук"
+  },
+  "silence_mode_text": {
+    "message": "Режим тишины"
+  },
+  "from_text": {
+    "message": "От"
+  },
+  "to_text": {
+    "message": "До"
+  },
 
-    "settings_saved": {
-        "message": "Настройки сохранены"
-    }
+  "settings_saved": {
+    "message": "Настройки сохранены"
+  }
 }
