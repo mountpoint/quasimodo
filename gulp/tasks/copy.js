@@ -6,7 +6,7 @@ const
 ;
 
 gulp.task('copy', () => {
-  return gulp.src(['src/**'])
+  return gulp.src(['src/**', '!src/css/*.less'])
     .pipe(debug({'title': 'copying files...'}))
     .pipe(gulp.dest('public'))
   ;
